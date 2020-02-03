@@ -17,21 +17,21 @@
         "tag": "bridgeout1",  // 内网设备1
         "protocol": "freedom",
         "settings": {
-          "redirect": "127.0.0.1:3389"  // 内网设备1的内网地址与端口
+          "redirect": "127.0.0.1:47984"  // 内网设备1的内网地址与端口
         }
       },
       {
         "tag": "bridgeout2",  // 内网设备2
         "protocol": "freedom",
         "settings": {
-          "redirect": "192.168.123.1:22"  // 内网设备2的内网地址与端口
+          "redirect": "127.0.0.1:47989"  // 内网设备2的内网地址与端口
         }
       },
       {
         "tag": "bridgeout3",  // 内网设备3
         "protocol": "freedom",
         "settings": {
-          "redirect": "192.168.1.123:80"  // 内网设备3的内网地址与端口
+          "redirect": "127.0.0.1:48010"  // 内网设备3的内网地址与端口
         }
       },
       {
@@ -78,7 +78,7 @@
           "inboundTag": [
             "bridge"
           ],
-          "port": "47985",  // 为内网设备2分配访问端口，须在portal分配的端口范围中
+          "port": "47989",  // 为内网设备2分配访问端口，须在portal分配的端口范围中
           "outboundTag": "bridgeout2"  // 对应内网设备2
         },
         {
@@ -86,9 +86,10 @@
           "inboundTag": [
             "bridge"
           ],
-          "port": "47986",  // 为内网设备3分配访问端口，须在portal分配的端口范围中
+          "port": "48010",  // 为内网设备3分配访问端口，须在portal分配的端口范围中
           "outboundTag": "bridgeout3"  //对应内网设备3
         }
-      ]
-    }
+      ]           // TCP 47984, 47989, 48010   UDP 47998, 47999, 48000, 48002, 48010
+                  
+    }            
   }
