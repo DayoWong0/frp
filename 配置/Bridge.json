@@ -1,0 +1,94 @@
+{
+    "log": {
+      "access": "",
+      "error": "",
+      "loglevel": "warning"
+    },
+    "reverse": {
+      "bridges": [
+        {
+          "tag": "bridge",
+          "domain": "test.ailitonia.com"
+        }
+      ]
+    },
+    "outbounds": [
+      {
+        "tag": "bridgeout1",  // 内网设备1
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "127.0.0.1:3389"  // 内网设备1的内网地址与端口
+        }
+      },
+      {
+        "tag": "bridgeout2",  // 内网设备2
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "192.168.123.1:22"  // 内网设备2的内网地址与端口
+        }
+      },
+      {
+        "tag": "bridgeout3",  // 内网设备3
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "192.168.1.123:80"  // 内网设备3的内网地址与端口
+        }
+      },
+      {
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "47.240.46.65",
+              "port": 4096,
+              "users": [
+                {
+                  "id": "134b53ca-b0cc-44a7-a28f-4214842c2fd6",
+                  "alterId": 64
+                }
+              ]
+            }
+          ]
+        },
+        "tag": "interconn"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "domain": [
+            "full:test.ailitonia.com"
+          ],
+          "outboundTag": "interconn"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "47984",  // 为内网设备1分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout1"  // 对应内网设备1
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "47985",  // 为内网设备2分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout2"  // 对应内网设备2
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "47986",  // 为内网设备3分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout3"  //对应内网设备3
+        }
+      ]
+    }
+  }

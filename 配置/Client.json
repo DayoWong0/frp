@@ -1,0 +1,33 @@
+{
+    "log": {
+      "access": "",
+      "error": "",
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "port": 1080,
+        "listen": "127.0.0.1",
+        "protocol": "socks"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "47.240.46.65",
+              "port": 5001,
+              "users": [
+                {
+                  "id": "89682891-3d57-4cef-abbb-fbac5937ba29",
+                  "alterId": 64
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
