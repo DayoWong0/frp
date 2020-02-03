@@ -35,6 +35,34 @@
         }
       },
       {
+        "tag": "bridgeout4",  // 内网设备4
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "127.0.0.1:47998"  // 内网设备4的内网地址与端口
+        }
+      },
+      {
+        "tag": "bridgeout5",  // 内网设备5
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "127.0.0.1:47999"  // 内网设备5的内网地址与端口
+        }
+      },
+      {
+        "tag": "bridgeout6",  // 内网设备6
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "127.0.0.1:48000"  // 内网设备6的内网地址与端口
+        }
+      },
+      {
+        "tag": "bridgeout7",  // 内网设备7
+        "protocol": "freedom",
+        "settings": {
+          "redirect": "127.0.0.1:48002"  // 内网设备7的内网地址与端口
+        }
+      },
+      {
         "protocol": "vmess",
         "settings": {
           "vnext": [
@@ -88,6 +116,38 @@
           ],
           "port": "48010",  // 为内网设备3分配访问端口，须在portal分配的端口范围中
           "outboundTag": "bridgeout3"  //对应内网设备3
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "47998",  // 为内网设备4分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout4"  // 对应内网设备4
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "47999",  // 为内网设备5分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout5"  // 对应内网设备5
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "48000",  // 为内网设备6分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout6"  // 对应内网设备6
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "bridge"
+          ],
+          "port": "48002",  // 为内网设备7分配访问端口，须在portal分配的端口范围中
+          "outboundTag": "bridgeout7"  // 对应内网设备7
         }
       ]           // TCP 47984, 47989, 48010   UDP 47998, 47999, 48000, 48002, 48010
                   
