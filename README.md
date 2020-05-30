@@ -2,7 +2,7 @@
 V2ray内网穿透实现远程串流游戏  
 ## frp-linux一键脚本
 ```shell
-wget https://raw.githubusercontent.com/chengziqaq/frp/master/frps-linux.sh?token=AFRKHNYOS42KQYEVSC2PM4C62LQQ6&&chmod +x frps-linux.sh&&./frps-linux.sh
+wget https://raw.githubusercontent.com/chengziqaq/frp/master/frps-linux.sh&&chmod +x frps-linux.sh&&./frps-linux.sh
 ```
 ## window启动
 - 下载客户端--对应的服务器版本.[frp_0.31.2](https://github.com/chengziqaq/frp/raw/master/frp_0.31.2_windows_amd64.zip)
